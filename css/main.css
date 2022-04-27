@@ -4,18 +4,45 @@ body{
   font-weight: 400;
   line-height: 1.4;
   color: #333;
+  /* height: 4000px; 배지 설정끝냈으니까 지워!*/
 }
 a{
   text-decoration: none;
+}
+img{
+  display: block;
 }
 .inner{
   width: 1100px;
   margin: 0 auto;
   position: relative;
 }
+.btn{
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  transition: .4s;
+}
+.btn:hover{
+  background-color: #333;
+  color: #fff;
+}
 /* 헤더 작성하기 */
 header{
-  background-color: royalblue;
+  background-color: #f6f5f0;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  width: 100%;
+  border-bottom: 1px solid #c8c8c8;
 }
 header .inner{
   /* background-color: orange; 임시로 확인해보려고 쓴거야*/
@@ -165,5 +192,66 @@ header .main-menu .item .item__contents .contents__texture h4{
 header .main-menu .item .item__contents .contents__texture p{
   color: #ea9926;
   margin: 4px 0 14px;
+}
+
+/* BADGES */
+header .badges{
+  position: absolute;
+  top: 132px;
+  right: 12px;
+  /* z-index: 9; 포지션을 fixed가 아니라 absolute로 하면 이 속성을 사용하지 않아도 된다 */
+}
+header .badges .badge{
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,.15);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* visual section */
+.visual{
+  margin-top: 120px;
+  background-image: url("../images/visual_bg.jpg");
+  background-position: center;
+}
+.visual .inner{
+  height: 646px;
+  /* background-color: orange; */
+}
+.visual .title{
+  position: absolute;
+  top: 40px;
+  left: -10px;
+}
+.visual .title .btn{
+  position: absolute;
+  top:230px;
+  left: 148px;
+}
+.visual .cup1.image{
+  position: absolute;
+  bottom: 0;
+  right: -47px;
+}
+.visual .cup1.text{
+  position: absolute;
+  top: 40px;
+  right: 60px;
+}
+.visual .cup2.image{
+  position: absolute;
+  bottom: 0;
+  right: 162px;
+}
+.visual .cup2.text{
+  position: absolute;
+  top: 186px;
+  right: 412px;
+}
+.visual .spoon{
+  position: absolute;
+  bottom: 0;
+  left: 275px;
 }
 

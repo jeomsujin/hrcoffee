@@ -19,11 +19,14 @@
   <title>coffee coffee</title>
   <link rel="icon" href="./favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <!-- Google APIs -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Dodum&family=Nanum+Gothic:wght@400;700&family=Stylish&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
+  <!-- swiper.js 나중에 추가하는 모양이야 ㅜㅜ-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="./js/main.js"></script>
 </head>
 <body>
@@ -352,6 +355,35 @@
         </li>
       </ul>
     </div>
+    <!-- BADGES: inner의 sibling-->
+    <div class="badges">
+      <div class="badge">
+        <img src="./images/badge1.jpg" art="Badge" />
+      </div>
+      <div class="badge">
+        <img src="./images/badge2.jpg" art="Badge" />
+      </div>
+    </div>
   </header>
+  <!-- VISUAL section -->
+  <section class="visual">
+    <div class="inner">
+      <div class="title">
+        <img src="./images/visual_title.png" alt="DELIGHTFUL START TO THE YEARS" />
+        <a href="javascript:void(0)" class="btn btn--brown">자세히 보기</a>
+      </div>
+      <div>
+        <img src="./images/visual_cup1.png" alt="Cup1" class="cup1 image" />
+        <img src="./images/visual_cup1_text.png" alt="헤이즐넛 아메리카노" class="cup1 text" />
+      </div>
+      <div>
+        <img src="./images/visual_cup2.png" alt="Cup2" class="cup2 image" />
+        <img src="./images/visual_cup2_text.png" alt="Cup3" class="cup2 text" />
+      </div>
+      <div>
+        <img src="./images/visual_spoon.png" alt="Spoon" class="spoon" />
+      </div>
+    </div>
+  </section>
 </body>
 </html>
