@@ -1,10 +1,10 @@
+/* COMMON */
 body{
   font-family: 'Nanum Gothic', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
   color: #333;
-  /* height: 4000px; 배지 설정끝냈으니까 지워!*/
 }
 a{
   text-decoration: none;
@@ -12,11 +12,15 @@ a{
 img{
   display: block;
 }
+
+/* INNER */
 .inner{
   width: 1100px;
   margin: 0 auto;
   position: relative;
 }
+
+/* BUTTON */
 .btn{
   width: 130px;
   padding: 10px;
@@ -67,7 +71,27 @@ img{
   color: #333;
   background-color: #fff;
 }
-/* 헤더 작성하기 */
+
+/* BACK TO POSITION 자리인가봐,,, */
+.back-to-position {
+  opacity: 0;
+  transition-duration: 1s;
+}
+.back-to-position.to-left {
+  transform: translateX(150px);
+}
+.back-to-position.to-right {
+  transform: translateX(-150px);
+}
+.show .back-to-position {
+  opacity: 1;
+  transform: translateX(0);
+}
+.show .back-to-position.delay-1 { transition-delay: .3s; }
+.show .back-to-position.delay-2 { transition-delay: .6s; }
+.show .back-to-position.delay-3 { transition-delay: .9s; }
+
+/* HEADER */
 header{
   background-color: #f6f5f0;
   position: fixed;
@@ -76,12 +100,8 @@ header{
   width: 100%;
   border-bottom: 1px solid #c8c8c8;
 }
-header .inner{
-  /* background-color: orange; 임시로 확인해보려고 쓴거야*/
-  /* width: 1100px; */
+header > .inner{
   height: 120px;
-  /* margin: 0 auto;
-  position: relative; */
 }
 header .logo{
   height: 75px;
@@ -91,7 +111,6 @@ header .logo{
   left:0;
   margin: auto;
 }
-
 header .sub-menu{
   position: absolute;
   top: 10px;
@@ -99,20 +118,11 @@ header .sub-menu{
   display: flex;
 }
 header .sub-menu ul.menu{
-  font-family: Areal, sans-serif;
+  font-family: Arial, sans-serif;
   display: flex;
 }
 header .sub-menu ul.menu li{
   position: relative;
-}
-header .sub-menu ul.menu li a{
-  padding: 11px 16px;
-  display: block;
-  font-size: 13px;
-  color: #656565;
-}
-header .sub-menu ul.menu li a:hover{
-  color: #000;
 }
 header .sub-menu ul.menu li::before{
   content: "";
@@ -124,8 +134,17 @@ header .sub-menu ul.menu li::before{
   bottom: 0;
   margin: auto;
 }
-header .sub-menu ul.menu li:first-child::before{
+header .sub-menu ul.menu li:first-child::before {
   display: none;
+}
+header .sub-menu ul.menu li a{
+  padding: 11px 16px;
+  display: block;
+  font-size: 13px;
+  color: #656565;
+}
+header .sub-menu ul.menu li a:hover{
+  color: #000;
 }
 header .sub-menu .search{
   position: relative;
@@ -169,7 +188,7 @@ header .main-menu{
 }
 header .main-menu .item .item__name{
   padding: 10px 20px 34px 20px;
-  font-family: Arial, serif;
+  font-family: Arial, sans-serif;
   font-size: 13px;
 }
 header .main-menu .item:hover .item__name{
@@ -178,7 +197,6 @@ header .main-menu .item:hover .item__name{
   border-radius: 6px 6px 0 0;
 }
 header .main-menu .item .item__contents{
-  background-color: orange;
   width: 100%;
   position: fixed;
   left: 0;
@@ -204,7 +222,7 @@ header .main-menu .item .item__contents .contents__menu > ul > li h4{
 }
 header .main-menu .item .item__contents .contents__menu > ul > li ul li{
   padding: 5px 0;
-  font-size: 14px;
+  font-size: 12px;
   color: #999;
   cursor: pointer;
 }
@@ -240,7 +258,7 @@ header .badges .badge{
   overflow: hidden;
 }
 
-/* visual section */
+/* VISUAL */
 .visual{
   margin-top: 120px;
   background-image: url("../images/visual_bg.jpg");
@@ -248,7 +266,7 @@ header .badges .badge{
 }
 .visual .inner{
   height: 646px;
-  /* background-color: orange; */
+  /* background-color: orange; 자리확인용 */
 }
 .visual .title{
   position: absolute;
@@ -288,11 +306,12 @@ header .badges .badge{
 .visual .fade-in{
   opacity: 0;
 }
-/* notice */
-.notice{
+
+/*NOTICE*/
+.notice {
   position: relative;
 }
-.notice .bg-left{
+.notice .bg-left {
   width: 50%;
   height: 100%;
   background-color: #333;
@@ -300,7 +319,7 @@ header .badges .badge{
   top: 0;
   left: 0;
 }
-.notice .bg-right{
+.notice .bg-right {
   width: 50%;
   height: 100%;
   background-color: #f6f5ef;
@@ -308,41 +327,97 @@ header .badges .badge{
   top: 0;
   right: 0;
 }
-.notice .inner{
+.notice .inner {
   height: 62px;
   display: flex;
 }
-.notice .inner__left{
+.notice .inner__left {
   width: 70%;
-  border-color: #333;
+  background-color: #333;
   display: flex;
   align-items: center;
 }
-.notice .inner__left h2{
+.notice .inner__left h2 {
   color: #fff;
   font-size: 17px;
   font-weight: 700;
   margin-right: 20px;
 }
-.notice .inner__left .swiper{
+.notice .inner__left .swiper {
   height: 62px;
   flex-grow: 1;
-  background-color: orange;
 }
-.notice .inner__left .notice-more{
+.notice .inner__left .swiper .swiper-slide {
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+.notice .inner__left .swiper .swiper-slide a {
+  color: #fff;
+}
+.notice .inner__left .notice-more {
   width: 62px;
   height: 62px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.notice .inner__left .notice-more .material-icons{
+.notice .inner__left .notice-more .material-icons {
   color: #fff;
   font-size: 30px;
 }
-.notice .inner__right{
+.notice .inner__right {
   width: 30%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+.notice .inner__right h2 {
+  font-size: 17px;
+  font-weight: 700;
+}
+.notice .inner__right .toggle-promotion {
+  width: 62px;
+  height: 62px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notice .inner__right .toggle-promotion .material-icons {
+  font-size: 30px;
+}
+/*PROMOTION*/
+.promotion {
+  display: flex;
+  justify-content: center;
+  background-color: #f6f5ef;
+  overflow: hidden;
+  position: relative;
+  height: 663px;
+  transition: height .4s;
+}
+.promotion.hide {
+  height: 0;
+}
+.promotion .swiper {
+  /* 819px 슬라이드 3개와 그 사이 여백 10px씩 = 2477px */
+  width: calc(819px * 3 + 10px * 2);
+  height: 553px;
+  flex-shrink: 0;
+}
+.promotion .swiper-slide {
+  position: relative;
+  opacity: .5;
+  transition: opacity 1s;
+}
+.promotion .swiper-slide-active {
+  opacity: 1;
+}
+.promotion .swiper-slide .btn{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
