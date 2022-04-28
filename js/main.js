@@ -18,7 +18,7 @@ searchInputEl.addEventListener('blur', function () {
   searchInputEl.setAttribute('placeholder', '');
 });
 
-//페이지 스크롤에 따른 요소 제어
+//페이지 스크롤에 따른 요소 제어 : 배지
 const badgeEl = document.querySelector('header .badges');
 
 window.addEventListener('scroll', function(){
@@ -39,3 +39,12 @@ window.addEventListener('scroll', function(){
 });
 
 /*visual section */
+//나타날 요소(.fade-in)들을 찾기
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+//요소들을 하나씩 반복해서 처리
+fadeEls.forEach(function(fadeEls, index){
+  gsap.to(fadeEls, 1, {
+    delay: (index + 1) * .7,
+    opacity: 1
+  });
+});
